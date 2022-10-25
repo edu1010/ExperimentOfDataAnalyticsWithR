@@ -42,6 +42,10 @@ median(armada$gunpowder)#is you orden the nambers is the
 #7.Search the name of the fleet with the greatest number of men and the one with the greatest amount of artillery and gunpowder.
 armada$Armada[armada$men == max(armada$men)]
 
+armada$Armada[armada$artillery == max(armada$artillery)]
+
+armada$Armada[armada$gunpowder == max(armada$gunpowder)]
+
 
 
 #8.Since the column men is redundant, delete this column from the dataset.
