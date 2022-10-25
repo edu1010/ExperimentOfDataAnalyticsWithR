@@ -14,3 +14,10 @@ Artists <- class2022[class2022$Profile == "Artist", ]
 mean(programmers$Extroversion)
 mean(Designers$Extroversion)
 mean(Artists$Extroversion)
+
+mens <- class2022[class2022$Sex..F.M..... == "M", ]
+woman  <- class2022[class2022$Sex..F.M..... == "F", ]
+
+mean(mens$Extroversion)
+mean(woman$Extroversion)
+
