@@ -11,9 +11,11 @@ programmers <- class2022[class2022$Profile == "Programmer", ]
 Designers <- class2022[class2022$Profile == "Designer", ]
 Artists <- class2022[class2022$Profile == "Artist", ]
 
-mean(programmers$Extroversion)
-mean(Designers$Extroversion)
-mean(Artists$Extroversion)
+meanProgExtrov <- mean(programmers$Extroversion)
+meanDesignExtrov <- mean(Designers$Extroversion)
+meanArtExtrov <- mean(Artists$Extroversion)
+
+barplot(c(meanProgExtrov, meanDesignExtrov, meanArtExtrov), main = "Mean of extroversion", ylab = "% of extroversion", names.arg = c("Programmers", "Designers", "Artists"), col = c("pink", "orange", "brown"))
 
 mens <- class2022[class2022$Sex..F.M..... == "M", ]
 woman  <- class2022[class2022$Sex..F.M..... == "F", ]
