@@ -45,3 +45,16 @@ data <-data[ ,-2]
 #10. Search all accidents that occur from 0 until 6 in the morning (both included) and delete them from the dataset
 positions <- which(data$Hora>=0 & data$Hora<=6 ) 
 data <- data[-positions, ]
+
+#11. Imagine that we want to calculate the distance to a hospital that is located in X=431510.63 and Y=4584212.20. Calculate the distance of every point to this hospital, by applying this formula
+
+X<-431510.63
+Y<-4584212.20
+#data$dist <- sqrt( (data$X-X)ˆ2 + (data$Y-Y)ˆ2 )
+#validation
+head(data[,c("X","Y","dist")] )
+
+#12. Now, calculate the accident that occurred closest to this hospital. Print its location (column BarN )
+#sum(is.na(DS$dist))
+idx <- which.min( data$dist)
+data$BarN[idx]

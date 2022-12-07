@@ -31,6 +31,46 @@ values
 data$Country[is.element(data$Economy..GDP.per.Capita.,values)]
 mean(data$Happiness.Score[is.element(data$Economy..GDP.per.Capita.,values)])
 
-#Given the previous result, can we say that the average happiness score of the ten richest countries
+#11 Given the previous result, can we say that the average happiness score of the ten richest countries
 #(those with the greatest value in GDP per capita) is greater than the average happiness score of all the
 #countries?
+mean(data$Happiness.Rank)
+
+threshold <- sort( data$Economy..GDP.per.Capita, decreasing = TRUE )[10]
+mean.h.richest <- mean( data$Happiness.Score[ data$Economy..GDP.per.Capita >= threshold ])
+mean.h <- mean(data$Happiness.Score)
+mean.h.richest; mean.h
+
+
+#12. Show the list of countries that occupy the last 20 positions in happiness rank.
+values<- sort(data$Happiness.Rank, decreasing = TRUE)
+values<- values[0:20]
+values
+data$Country[is.element(data$Happiness.Rank,values)]
+#13. What is the region with the greatest average happiness score?
+regions <- unique(data$Region)
+regions
+
+
+i=1
+is.numeric(i)
+for (i in regions) {
+  #number of countries x region
+  regions[i]
+ cantidad<- length(data$Country[data$regions==regions[i]])
+#recorrer y calcular el mean
+ 
+}
+
+#14. Show a boxplot with the values of the GDP per capita of all the countries. Write how you interpret this plot.
+boxplot(data$Economy..GDP.per.Capita.)
+#The boxplot shows the five numbers:
+fivenum(data$Economy..GDP.per.Capita.)
+
+#15. Compute the first and third quantile of the GDP per capita.
+
+q1<-quantile( data$Economy..GDP.per.Capita., probs=0.25)
+q3<-quantile( data$Economy..GDP.per.Capita., probs=0.75)
+#16. Then, compute the average happiness score of the countries that are between the first quantile and the third quantile.
+mean( data$Happiness.Score[ data$Economy..GDP.per.Capita.>=q1 &
+                              data$Economy..GDP.per.Capita.<=q3 ] )
